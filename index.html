@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Invitations de Mariage — Famille Ben Omar & Touré · Mai 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Invitation aux célébrations de mariage — 29 au 31 Mai 2026 — Togo">
+
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#FAF9F6',
+            gold: '#D4AF37',
+            'gold-light': '#E8CC6A',
+            'gold-dark': '#A8892B',
+            'gold-pale': '#F5E9B8',
+            sage: '#6B8E23',
+            'sage-light': '#8FB34A',
+            'sage-pale': '#D9E8C4',
+            royal: '#552583',
+            'royal-light': '#7B3AB5',
+            'royal-pale': '#EDE3F5',
+            cream: '#F5EDDC',
+            'warm-dark': '#2C1F0F',
+            'warm-mid': '#5A3E28',
+            'warm-light': '#8B6A50',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            cinzel: ['Cinzel', 'Georgia', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+            arabic: ['"Noto Naskh Arabic"', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          },
+          animation: {
+            'bounce-slow': 'bounce 2s infinite',
+            'pulse-gold': 'pulseGold 2.5s ease-in-out infinite',
+            'spin-slow': 'spin 20s linear infinite',
+          },
+          keyframes: {
+            pulseGold: {
+              '0%,100%': { opacity: '0.6', transform: 'scale(1)' },
+              '50%': { opacity: '1', transform: 'scale(1.03)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== ANIME.JS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+
+</head>
+
+<body class="font-body text-warm-dark bg-linen">
+
+  <!-- ================================================================
+     FIXED DECORATIVE BG — Islamic Geometric Pattern
+================================================================ -->
+  <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.035]" id="moving-bg">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <!-- 8-pointed star -->
+          <polygon
+            points="40,4 47,22 60,10 50,23 68,18 55,30 70,40 55,50 68,62 50,57 60,70 47,58 40,76 33,58 20,70 30,57 12,62 25,50 10,40 25,30 12,18 30,23 20,10 33,22"
+            fill="none" stroke="#D4AF37" stroke-width="0.5" />
+          <circle cx="40" cy="40" r="8" fill="none" stroke="#6B8E23" stroke-width="0.4" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#geo)" />
+    </svg>
+  </div>
+
+  <!-- ================================================================
+     SECTION 1 — HERO
+================================================================ -->
+  <header
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-5 py-20 z-10 overflow-hidden">
+
+    <!-- Radial glow -->
+    <div class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at 50% 40%, rgba(212,175,55,0.1) 0%, rgba(250,249,246,0) 65%)"></div>
+
+    <!-- Corner florals SVG -->
+    <svg class="absolute top-0 left-0 w-48 md:w-72 opacity-30 pointer-events-none" viewBox="0 0 300 300"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(-20,-20)">
+        <ellipse cx="60" cy="60" rx="36" ry="14" fill="#C9A96E" transform="rotate(-35,60,60)" />
+        <ellipse cx="60" cy="60" rx="36" ry="14" fill="#D4AF37" transform="rotate(25,60,60)" />
+        <ellipse cx="60" cy="60" rx="36" ry="14" fill="#E8CC6A" transform="rotate(85,60,60)" />
+        <ellipse cx="60" cy="60" rx="36" ry="14" fill="#C9A96E" transform="rotate(145,60,60)" />
+        <circle cx="60" cy="60" r="12" fill="#FAF9F6" />
+        <line x1="60" y1="96" x2="35" y2="160" stroke="#6B8E23" stroke-width="2.5" />
+        <ellipse cx="28" cy="140" rx="20" ry="8" fill="#6B8E23" transform="rotate(-42,28,140)" />
+        <ellipse cx="42" cy="170" rx="16" ry="7" fill="#8FB34A" transform="rotate(-30,42,170)" />
+        <!-- smaller sprig -->
+        <line x1="60" y1="110" x2="90" y2="148" stroke="#6B8E23" stroke-width="1.5" />
+        <ellipse cx="96" cy="144" rx="13" ry="5" fill="#8FB34A" transform="rotate(35,96,144)" />
+      </g>
+    </svg>
+    <svg class="absolute top-0 right-0 w-48 md:w-72 opacity-30 pointer-events-none" viewBox="0 0 300 300"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="transform:scaleX(-1)">
+      <g transform="translate(-20,-20)">
+        <ellipse cx="60" cy="60" rx="32" ry="13" fill="#8FB34A" transform="rotate(-40,60,60)" />
+        <ellipse cx="60" cy="60" rx="32" ry="13" fill="#6B8E23" transform="rotate(20,60,60)" />
+        <ellipse cx="60" cy="60" rx="32" ry="13" fill="#8FB34A" transform="rotate(80,60,60)" />
+        <ellipse cx="60" cy="60" rx="32" ry="13" fill="#6B8E23" transform="rotate(140,60,60)" />
+        <circle cx="60" cy="60" r="10" fill="#D9E8C4" />
+        <line x1="60" y1="93" x2="40" y2="155" stroke="#6B8E23" stroke-width="2" />
+        <ellipse cx="32" cy="138" rx="17" ry="7" fill="#6B8E23" transform="rotate(-38,32,138)" />
+      </g>
+    </svg>
+    <svg class="absolute bottom-0 right-0 w-48 md:w-64 opacity-25 pointer-events-none" viewBox="0 0 300 300"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="transform:rotate(180deg)">
+      <g transform="translate(-20,-20)">
+        <ellipse cx="60" cy="60" rx="30" ry="12" fill="#D4AF37" transform="rotate(-30,60,60)" />
+        <ellipse cx="60" cy="60" rx="30" ry="12" fill="#C9A96E" transform="rotate(60,60,60)" />
+        <ellipse cx="60" cy="60" rx="30" ry="12" fill="#D4AF37" transform="rotate(150,60,60)" />
+        <circle cx="60" cy="60" r="9" fill="#F5E9B8" />
+        <line x1="60" y1="90" x2="80" y2="145" stroke="#6B8E23" stroke-width="2" />
+        <ellipse cx="88" cy="130" rx="15" ry="6" fill="#8FB34A" transform="rotate(30,88,130)" />
+      </g>
+    </svg>
+
+    <!-- Hero content -->
+    <div class="hero-content relative z-10 max-w-3xl mx-auto">
+
+      <!-- Bismillah -->
+      <p class="font-arabic text-2xl text-gold mb-2 opacity-0" id="bismillah" style="direction:rtl">
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+      </p>
+      <p class="font-serif italic text-warm-light text-sm mb-8 opacity-0" id="bismillah-fr">
+        Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux
+      </p>
+
+      <!-- Eyebrow -->
+      <p class="font-cinzel text-[0.62rem] md:text-xs uppercase tracking-[0.4em] text-warm-light mb-10 opacity-0"
+        id="hero-eyebrow">
+        ✦ &nbsp; Vous êtes cordialement invités aux mariages de &nbsp; ✦
+      </p>
+
+      <!-- ── COUPLE 1 ── -->
+      <div class="mb-10">
+        <h1 class="hero-names font-display text-3xl md:text-5xl lg:text-6xl text-royal leading-tight name-anim-1"
+          style="font-weight:400">
+          Ouro Djeri Ben Omar
+        </h1>
+        <div class="flex items-center justify-center gap-5 my-4">
+          <div class="h-px flex-1 max-w-[80px]" style="background:linear-gradient(to right,transparent,var(--gold))">
+          </div>
+          <span class="font-serif italic text-4xl text-gold-gradient"
+            style="-webkit-text-fill-color:initial;background:linear-gradient(135deg,#A8892B,#D4AF37,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent">&amp;</span>
+          <div class="h-px flex-1 max-w-[80px]" style="background:linear-gradient(to left,transparent,var(--gold))">
+          </div>
+        </div>
+        <h1 class="hero-names font-display text-3xl md:text-5xl lg:text-6xl text-royal leading-tight name-anim-1"
+          style="font-weight:400">
+          Ouro Tagba Fatima
+        </h1>
+        <div class="mt-4 inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gold/30 bg-gold/5">
+          <span class="text-base">📅</span>
+          <span class="font-cinzel text-sage text-xs tracking-[0.2em]">29 · 30 MAI 2026</span>
+        </div>
+      </div>
+
+      <!-- Diamond separator -->
+      <div class="flex items-center justify-center gap-4 my-8 divider-1">
+        <div class="h-px w-16 md:w-28" style="background:linear-gradient(to right,transparent,var(--gold-pale))"></div>
+        <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="22,2 42,22 22,42 2,22" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.6" />
+          <polygon points="22,8 36,22 22,36 8,22" fill="rgba(212,175,55,0.08)" stroke="#D4AF37" stroke-width="1" />
+          <circle cx="22" cy="22" r="5" fill="#D4AF37" opacity="0.8" />
+        </svg>
+        <div class="h-px w-16 md:w-28" style="background:linear-gradient(to left,transparent,var(--gold-pale))"></div>
+      </div>
+
+      <!-- ── COUPLE 2 ── -->
+      <!-- <div class="mb-10">
+      <h1 class="hero-names font-display text-3xl md:text-5xl lg:text-6xl text-royal leading-tight name-anim-2" style="font-weight:400">
+        Abressi Touré Sabour
+      </h1>
+      <div class="flex items-center justify-center gap-5 my-4">
+        <div class="h-px flex-1 max-w-[80px]" style="background:linear-gradient(to right,transparent,var(--sage))"></div>
+        <span class="font-serif italic text-4xl" style="color:var(--sage)">&amp;</span>
+        <div class="h-px flex-1 max-w-[80px]" style="background:linear-gradient(to left,transparent,var(--sage))"></div>
+      </div>
+      <h1 class="hero-names font-display text-3xl md:text-5xl lg:text-6xl text-royal leading-tight name-anim-2" style="font-weight:400">
+        Sibabi Akpo Hamoudiyatou
+      </h1>
+      <div class="mt-4 inline-flex items-center gap-3 px-5 py-2 rounded-full border border-sage/40 bg-sage/5">
+        <span class="text-base">📅</span>
+        <span class="font-cinzel text-sage text-xs tracking-[0.2em]">30 · 31 MAI 2026</span>
+      </div>
+    </div> -->
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator absolute bottom-8 left-1/2 flex flex-col items-center gap-2 cursor-pointer z-10"
+      onclick="document.getElementById('tabs-anchor').scrollIntoView({behavior:'smooth'})">
+      <span class="font-cinzel text-[0.6rem] tracking-[0.35em] text-warm-light uppercase">Découvrir</span>
+      <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- ================================================================
+     SECTION 2 — VERSET CORANIQUE (Glassmorphism)
+================================================================ -->
+  <section class="py-20 px-5 section-hidden reveal z-10 relative">
+    <div class="max-w-2xl mx-auto">
+      <div class="glass rounded-3xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden"
+        style="border: 2px double rgba(212,175,55,0.3);">
+        <!-- Inner ornament -->
+        <div class="absolute top-4 left-4 w-14 h-14 opacity-20 pointer-events-none" aria-hidden="true">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="30,3 37,19 55,15 44,28 57,38 40,38 36,56 30,42 24,56 20,38 3,38 16,28 5,15 23,19"
+              fill="none" stroke="#D4AF37" stroke-width="1.5" />
+          </svg>
+        </div>
+        <div class="absolute bottom-4 right-4 w-14 h-14 opacity-20 pointer-events-none rotate-45" aria-hidden="true">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="30,3 37,19 55,15 44,28 57,38 40,38 36,56 30,42 24,56 20,38 3,38 16,28 5,15 23,19"
+              fill="none" stroke="#6B8E23" stroke-width="1.5" />
+          </svg>
+        </div>
+
+        <span class="font-cinzel text-[0.62rem] tracking-[0.4em] text-gold uppercase mb-4 block">✦ L'Union Sacrée
+          ✦</span>
+
+        <p class="font-arabic text-2xl md:text-3xl text-royal mb-4 leading-relaxed" style="direction:rtl">
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+        </p>
+        <p class="font-serif italic text-base md:text-lg leading-relaxed text-warm-mid mb-5">
+          "Et parmi Ses signes, Il a créé de vous, pour vous, des épouses afin que vous trouviez en elles la quiétude,
+          et Il a établi entre vous de l'affection et de la bonté."
+        </p>
+        <p class="font-cinzel text-sm text-royal tracking-wider">— Sourate Ar-Rûm, Verset 21</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+     SECTION 3 — TABS (Mariage 1 / Mariage 2)
+================================================================ -->
+  <div id="tabs-anchor" class="py-4 z-10 relative"></div>
+  <div class="sticky top-0 z-50 py-3 px-4 flex justify-center"
+    style="background:rgba(250,249,246,0.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,175,55,0.15);">
+    <div class="flex gap-1 p-1 rounded-full max-w-sm w-full"
+      style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2)">
+      <button
+        class="tab-btn active flex-1 py-2.5 px-3 rounded-full font-cinzel text-xs tracking-wide text-center transition-all"
+        onclick="switchWedding(1,this)" role="tab" aria-selected="true">
+        💍 Mariage 1 · 29–30 Mai
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================================================================
+     PANEL 1 — OURO DJERI & OURO TAGBA
+================================================================ -->
+    <div id="panel-1" class="wedding-panel active">
+
+      <!-- ── COUNTDOWN ── -->
+      <section class="py-16 px-5 text-center section-hidden reveal relative z-10"
+        style="background:linear-gradient(180deg,var(--linen),#FFF9EE)">
+        <span class="font-cinzel text-[0.62rem] tracking-[0.4em] text-gold uppercase block mb-4">Le Grand Jour
+          Approche</span>
+        <h2 class="font-display text-2xl md:text-4xl text-royal mb-1" style="font-style:italic;font-weight:400">
+          Ouro Djeri <span class="text-gold">&</span> Ouro Tagba
+        </h2>
+        <p class="font-serif text-warm-light italic mb-10 text-sm">29 – 30 Mai 2026</p>
+
+        <div class="flex justify-center gap-3 md:gap-5 flex-wrap" id="countdown-grid-1">
+          <div
+            class="countdown-card glass rounded-2xl text-center py-5 px-4 md:px-6 min-w-[70px] md:min-w-[90px] shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-0.5"
+              style="background:linear-gradient(to right,var(--gold-dark),var(--gold-light))"></div>
+            <span class="countdown-num" id="p1-days">--</span>
+            <span
+              class="font-cinzel text-[0.6rem] tracking-[0.15em] text-warm-light uppercase mt-1.5 block">Jours</span>
+          </div>
+          <div
+            class="countdown-card glass rounded-2xl text-center py-5 px-4 md:px-6 min-w-[70px] md:min-w-[90px] shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-0.5"
+              style="background:linear-gradient(to right,var(--gold-dark),var(--gold-light))"></div>
+            <span class="countdown-num" id="p1-hours">--</span>
+            <span
+              class="font-cinzel text-[0.6rem] tracking-[0.15em] text-warm-light uppercase mt-1.5 block">Heures</span>
+          </div>
+          <div
+            class="countdown-card glass rounded-2xl text-center py-5 px-4 md:px-6 min-w-[70px] md:min-w-[90px] shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-0.5"
+              style="background:linear-gradient(to right,var(--gold-dark),var(--gold-light))"></div>
+            <span class="countdown-num" id="p1-mins">--</span>
+            <span
+              class="font-cinzel text-[0.6rem] tracking-[0.15em] text-warm-light uppercase mt-1.5 block">Minutes</span>
+          </div>
+          <div
+            class="countdown-card glass rounded-2xl text-center py-5 px-4 md:px-6 min-w-[70px] md:min-w-[90px] shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-0.5"
+              style="background:linear-gradient(to right,var(--gold-dark),var(--gold-light))"></div>
+            <span class="countdown-num" id="p1-secs">--</span>
+            <span
+              class="font-cinzel text-[0.6rem] tracking-[0.15em] text-warm-light uppercase mt-1.5 block">Secondes</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── LIEU ── -->
+      <section class="py-16 px-5 section-hidden reveal z-10 relative"
+        style="background:linear-gradient(135deg,#F5EBD8,var(--linen))">
+        <div class="max-w-xl mx-auto text-center">
+          <span class="font-cinzel text-[0.62rem] tracking-[0.4em] text-gold uppercase block mb-4">Le Lieu</span>
+          <h2 class="font-display text-2xl md:text-3xl text-warm-dark mb-10" style="font-weight:400">Où nous
+            <em>rejoindre</em></h2>
+
+          <div class="glass rounded-2xl p-8 md:p-10 shadow-xl">
+            <div class="w-14 h-14 rounded-full mx-auto mb-5 flex items-center justify-center shadow-lg"
+              style="background:linear-gradient(135deg,var(--gold-dark),var(--gold-light))">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+            </div>
+            <h3 class="font-display text-xl text-warm-dark mb-3" style="font-weight:400">Salimde  — Sokode-Togo</h3>
+            <p class="font-serif italic text-warm-light text-sm leading-relaxed mb-6">
+            <br>par les familles des mariés
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ── PROGRAMME ── -->
+      <section class="py-16 px-5 section-hidden reveal z-10 relative" style="background:var(--linen)">
+        <div class="max-w-xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="font-cinzel text-[0.62rem] tracking-[0.4em] text-gold uppercase block mb-4">Déroulé</span>
+            <h2 class="font-display text-2xl md:text-3xl text-warm-dark" style="font-weight:400">Le <em>Programme</em>
+            </h2>
+          </div>
+
+          <!-- Jour 1 -->
+          <div class="mb-2">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
+              style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:white">
+              <span class="font-cinzel text-[0.65rem] tracking-wider">Jeudi 29 Mai 2026</span>
+            </div>
+          </div>
+          <div class="flex gap-5 mb-3">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line flex-1 mt-2 h-16"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">09h00</span>
+              <strong class="font-serif text-warm-dark text-base block">Accueil des invités</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Réception et installation des familles
+                et proches</p>
+            </div>
+          </div>
+          <div class="flex gap-5 mb-3">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line flex-1 mt-2 h-16"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">10h30</span>
+              <strong class="font-serif text-warm-dark text-base block">🌙 Nikah — Cérémonie religieuse</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Union bénie sous la grâce d'Allah
+                selon les traditions</p>
+            </div>
+          </div>
+          <div class="flex gap-5 mb-3">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line flex-1 mt-2 h-16"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">13h00</span>
+              <strong class="font-serif text-warm-dark text-base block">🍽️ Déjeuner de fête</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Repas traditionnel en famille</p>
+            </div>
+          </div>
+          <div class="flex gap-5 mb-6">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">16h00</span>
+              <strong class="font-serif text-warm-dark text-base block">🥁 Danses & festivités</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Chants, musiques traditionnelles et
+                modernes</p>
+            </div>
+          </div>
+
+          <!-- Jour 2 -->
+          <div class="mb-2">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
+              style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:white">
+              <span class="font-cinzel text-[0.65rem] tracking-wider">Vendredi 30 Mai 2026</span>
+            </div>
+          </div>
+          <div class="flex gap-5 mb-3">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line flex-1 mt-2 h-16"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">10h00</span>
+              <strong class="font-serif text-warm-dark text-base block">🤝 Cérémonie civile & traditionnelle</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Officialisation de l'union et échange
+                des consentements</p>
+            </div>
+          </div>
+          <div class="flex gap-5 mb-3">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line flex-1 mt-2 h-16"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">14h00</span>
+              <strong class="font-serif text-warm-dark text-base block">🍽️ Banquet de mariage</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Grands repas, discours, témoignages et
+                animations</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="glass rounded-xl p-4 flex-1 mb-4 shadow-sm hover:-translate-y-0.5 transition-transform">
+              <span class="font-cinzel text-xs text-gold tracking-wider block mb-1">20h00</span>
+              <strong class="font-serif text-warm-dark text-base block">🎶 Soirée & Bal</strong>
+              <p class="font-body text-warm-light text-xs mt-0.5 leading-relaxed">Musique, danse, célébration jusqu'en
+                soirée</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── GALERIE ── -->
+      <section class="py-16 px-5 section-hidden reveal z-10 relative"
+        style="background:linear-gradient(180deg,#EEF4EE,var(--linen))">
+        <div class="max-w-2xl mx-auto text-center">
+          <span class="font-cinzel text-[0.62rem] tracking-[0.4em] text-gold uppercase block mb-4">Galerie</span>
+          <h2 class="font-display text-2xl md:text-3xl text-warm-dark mb-10" style="font-weight:400">Nos
+            <em>moments</em></h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <!-- 4 placeholder gallery items -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden border border-gold/20 shadow-md hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+              onclick="openLightbox()">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" fill="#F5EBD8" />
+                <circle cx="100" cy="85" r="42" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+                <text x="100" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="30"
+                  fill="#D4AF37">♡</text>
+                <text x="100" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B6A50"
+                  font-style="italic">Photo à venir</text>
+                <ellipse cx="25" cy="25" rx="16" ry="6" fill="#C9A96E" transform="rotate(-30,25,25)" />
+                <ellipse cx="175" cy="175" rx="14" ry="5" fill="#6B8E23" transform="rotate(20,175,175)" />
+              </svg>
+            </div>
+            <div
+              class="gallery-item rounded-xl overflow-hidden border border-gold/20 shadow-md hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+              onclick="openLightbox()">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" fill="#EEF4EE" />
+                <polygon points="100,20 120,80 180,80 133,116 150,176 100,140 50,176 67,116 20,80 80,80" fill="none"
+                  stroke="#6B8E23" stroke-width="1.2" />
+                <text x="100" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B6A50"
+                  font-style="italic">Photo à venir</text>
+              </svg>
+            </div>
+            <div
+              class="gallery-item rounded-xl overflow-hidden border border-gold/20 shadow-md hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+              onclick="openLightbox()">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" fill="#F9F4EC" />
+                <text x="100" y="95" text-anchor="middle" font-family="Georgia,serif" font-size="52"
+                  fill="rgba(212,175,55,0.25)">✦</text>
+                <text x="100" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#C9A96E">Ouro
+                  Djeri</text>
+                <text x="100" y="120" text-anchor="middle" font-family="Georgia,serif" font-size="11"
+                  fill="#C9A96E">Ouro Tagba</text>
+                <text x="100" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#8B6A50"
+                  font-style="italic">29–30 Mai 2026</text>
+              </svg>
+            </div>
+            <div
+              class="gallery-item rounded-xl overflow-hidden border border-gold/20 shadow-md hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+              onclick="openLightbox()">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" fill="#F0F7F0" />
+                <path
+                  d="M100 55 C80 35,50 50,62 78 C42 78,42 108,62 108 L100 138 L138 108 C158 108,158 78,138 78 C150 50,120 35,100 55Z"
+                  fill="rgba(107,142,35,0.18)" stroke="#6B8E23" stroke-width="1.2" />
+                <text x="100" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B6A50"
+                  font-style="italic">Photo à venir</text>
+              </svg>
+            </div>
+          </div>
+          <p class="font-serif italic text-warm-light text-xs mt-5 opacity-70">📷 Les photos seront mises à jour avant
+            l'événement</p>
+        </div>
+      </section>
+    </div><!-- /panel-1 -->
+
+  </main>
+
+  <!-- ================================================================
+     LIGHTBOX
+================================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button
+      class="absolute top-5 right-6 text-white text-4xl font-light leading-none z-10 hover:text-gold transition-colors"
+      onclick="closeLightbox()" aria-label="Fermer">&times;</button>
+    <div class="text-center text-white px-6">
+      <div class="text-5xl mb-4">📷</div>
+      <p class="font-display text-xl italic mb-2">Photo bientôt disponible</p>
+      <p class="font-body text-sm opacity-60">Remplacez ce bloc par vos images réelles avec la classe<br><code
+          class="text-gold">rounded-xl border-4 border-gold shadow-2xl</code></p>
+    </div>
+  </div>
+  <!-- ================================================================
+     FOOTER
+================================================================ -->
+  <footer class="relative z-10 py-14 px-5 text-center overflow-hidden" style="background:var(--warm-dark)">
+    <!-- Ornament -->
+    <div class="absolute inset-0 pointer-events-none opacity-5">
+      <svg width="100%" height="100%">
+        <defs>
+          <pattern id="fgeo" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <polygon points="30,3 36,18 52,14 42,26 53,36 38,36 34,52 30,38 26,52 22,36 7,36 18,26 8,14 24,18"
+              fill="none" stroke="#D4AF37" stroke-width="0.8" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#fgeo)" />
+      </svg>
+    </div>
+
+    <div class="relative z-10">
+      <!-- Floral SVG -->
+      <svg class="mx-auto mb-4 opacity-60" width="80" height="36" viewBox="0 0 80 36" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <ellipse cx="40" cy="18" rx="9" ry="6" fill="#D4AF37" transform="rotate(0,40,18)" />
+        <ellipse cx="40" cy="18" rx="9" ry="6" fill="#E8CC6A" transform="rotate(60,40,18)" />
+        <ellipse cx="40" cy="18" rx="9" ry="6" fill="#A8892B" transform="rotate(120,40,18)" />
+        <circle cx="40" cy="18" r="4" fill="#F5E9B8" />
+        <ellipse cx="16" cy="17" rx="7" ry="3" fill="#6B8E23" transform="rotate(-15,16,17)" />
+        <ellipse cx="64" cy="17" rx="7" ry="3" fill="#8FB34A" transform="rotate(15,64,17)" />
+      </svg>
+
+      <p class="font-display text-2xl md:text-3xl mb-3"
+        style="color:var(--gold-light);font-style:italic;font-weight:400">
+        Qu'Allah bénisse ces deux unions.
+      </p>
+      <p class="font-arabic text-xl mb-5" style="color:rgba(212,175,55,0.6);direction:rtl">
+        بارك الله لكما وبارك عليكما
+      </p>
+      <div class="flex justify-center gap-3 mb-6 flex-wrap">
+        <span
+          class="font-cinzel text-[0.6rem] tracking-widest px-3 py-1 rounded-full border border-gold/20 text-gold/50 uppercase">Famille
+          Ben Omar</span>
+        <span class="text-gold/20">·</span>
+        <span
+          class="font-cinzel text-[0.6rem] tracking-widest px-3 py-1 rounded-full border border-gold/20 text-gold/50 uppercase">Famille
+          Touré</span>
+        <span class="text-gold/20">·</span>
+      </div>
+      <p class="font-body text-[0.65rem] tracking-widest uppercase" style="color:rgba(255,255,255,0.2)">
+        &copy; 2026 — Invitation de luxe · Mai 2026 · Togo
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

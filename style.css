@@ -1,0 +1,320 @@
+/* ======= CSS VARIABLES ======= */
+:root {
+    --gold: #D4AF37;
+    --gold-light: #E8CC6A;
+    --gold-dark: #A8892B;
+    --gold-pale: #F5E9B8;
+    --sage: #6B8E23;
+    --sage-light: #8FB34A;
+    --royal: #552583;
+    --linen: #FAF9F6;
+    --cream: #F5EDDC;
+    --warm-dark: #2C1F0F;
+    --warm-mid: #5A3E28;
+    --shadow-gold: 0 4px 30px rgba(212, 175, 55, 0.25);
+    --shadow-soft: 0 8px 40px rgba(44, 31, 15, 0.1);
+}
+
+/* ======= BASE ======= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--linen);
+}
+
+/* ======= GRAIN TEXTURE ======= */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9990;
+    opacity: 0.5;
+}
+
+/* ======= GLASSMORPHISM ======= */
+.glass {
+    background: rgba(250, 249, 246, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.glass-dark {
+    background: rgba(44, 31, 15, 0.72);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+/* ======= GEOMETRIC ORNAMENT ======= */
+.ornament-ring {
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 50%;
+    position: absolute;
+    animation-name: expandFade;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes expandFade {
+    0% {
+        transform: scale(0.92);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.05);
+        opacity: 0;
+    }
+}
+
+/* ======= LETTER ANIMATION ======= */
+.letter {
+    display: inline-block;
+    opacity: 0;
+}
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+/* ======= GOLD GRADIENT TEXT ======= */
+.text-gold-gradient {
+    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 40%, var(--gold-light) 70%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ======= DIVIDER LINE ANIM ======= */
+.divider-line {
+    transition: width 1.5s ease;
+}
+
+/* ======= TAB SYSTEM ======= */
+.tab-btn {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    color: white;
+    box-shadow: var(--shadow-gold);
+}
+
+.wedding-panel {
+    display: none;
+}
+
+.wedding-panel.active {
+    display: block;
+    animation: panelIn 0.55s ease both;
+}
+
+@keyframes panelIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======= COUNTDOWN CARD ======= */
+.countdown-num {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    line-height: 1;
+}
+
+/* ======= PROGRAMME TIMELINE ======= */
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+.timeline-line {
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold-pale), transparent);
+    flex-shrink: 0;
+    margin-left: 5.5px;
+}
+
+/* ======= GALLERY ======= */
+.gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery-item::after {
+    content: '🔍';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(212, 175, 55, 0.0);
+    transition: background 0.3s;
+}
+
+.gallery-item:hover::after {
+    background: rgba(212, 175, 55, 0.15);
+}
+
+.gallery-item svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ======= RSVP INPUTS ======= */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--warm-dark);
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
+}
+
+.form-textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.form-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-light);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.radio-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--warm-mid);
+    transition: all 0.25s;
+}
+
+.radio-pill:has(input:checked) {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+}
+
+.radio-pill input {
+    display: none;
+}
+
+/* ======= LIGHTBOX ======= */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 12, 4, 0.94);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+/* ======= ISLAMIC GEOMETRIC SVG ======= */
+.bg-geometric {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ======= SCROLL INDICATOR ======= */
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(8px) translateX(-50%);
+        opacity: 0.4;
+    }
+}
+
+.scroll-indicator {
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 400px) {
+    .countdown-num {
+        font-size: 1.8rem;
+    }
+
+    .countdown-card {
+        padding: 14px 10px !important;
+        min-width: 58px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-names {
+        font-size: 1.5rem !important;
+    }
+}
