@@ -1,20 +1,9 @@
 /* ====== HERO ANIMATION ====== */
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Prepare split-text for name-anim-1 (Mariage 1)
   document.querySelectorAll(".name-anim-1").forEach((el) => {
-    el.innerHTML = el.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>",
-    );
-  });
-  document.querySelectorAll(".name-anim-2").forEach((el) => {
-    el.innerHTML = el.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>",
-    );
+    el.innerHTML = el.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
   });
 
-  // 2. Hero timeline
   const heroTL = anime.timeline({ easing: "easeOutExpo" });
 
   heroTL
@@ -46,20 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "-=400",
     )
-    .add({ targets: ".divider-1", opacity: [0, 1], duration: 800 }, "-=400")
-    .add(
-      {
-        targets: ".name-anim-2 .letter",
-        opacity: [0, 1],
-        translateX: [30, 0],
-        scaleX: [0.4, 1],
-        duration: 700,
-        delay: anime.stagger(22),
-      },
-      "-=500",
-    );
+    .add({ targets: ".divider-1", opacity: [0, 1], duration: 800 }, "-=400");
 
-  // 3. Floating background
   anime({
     targets: "#moving-bg",
     translateX: [-8, 8],
@@ -70,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     easing: "easeInOutSine",
   });
 
-  // 4. Scroll reveal
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -89,13 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.1 },
   );
 
-  document
-    .querySelectorAll(".reveal")
-    .forEach((el) => revealObserver.observe(el));
+  document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-  // 5. Start countdowns
   startCountdown(1, new Date("2026-05-29T09:00:00"));
-  startCountdown(2, new Date("2026-05-30T09:00:00"));
 });
 
 /* ====== TAB SWITCHING ====== */
@@ -105,25 +77,20 @@ function switchWedding(n, btn) {
     b.style.color = "";
     b.setAttribute("aria-selected", "false");
   });
-  document
-    .querySelectorAll(".wedding-panel")
-    .forEach((p) => p.classList.remove("active"));
+  document.querySelectorAll(".wedding-panel").forEach((p) => p.classList.remove("active"));
   btn.classList.add("active");
   btn.setAttribute("aria-selected", "true");
   document.getElementById("panel-" + n).classList.add("active");
 
-  // Re-trigger reveals in newly shown panel
-  document
-    .querySelectorAll("#panel-" + n + " .section-hidden")
-    .forEach((el) => {
-      anime({
-        targets: el,
-        opacity: [0, 1],
-        translateY: [20, 0],
-        duration: 600,
-        easing: "easeOutQuad",
-      });
+  document.querySelectorAll("#panel-" + n + " .section-hidden").forEach((el) => {
+    anime({
+      targets: el,
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600,
+      easing: "easeOutQuad",
     });
+  });
 
   window.scrollTo({
     top: document.getElementById("tabs-anchor").offsetTop - 60,
@@ -143,13 +110,12 @@ function startCountdown(panel, targetDate) {
         const el = document.getElementById("p" + panel + "-" + id);
         if (el) el.textContent = "00";
       });
-      // Show finished message
       const grid = document.getElementById("countdown-grid-" + panel);
       if (grid) {
         const msg = document.createElement("p");
         msg.className = "font-display text-xl italic mt-4";
         msg.style.color = "var(--gold)";
-        msg.textContent = "✨ C'est aujourd'hui ! Bienvenue à la célébration !";
+        msg.textContent = "✨ C'est aujourd'hui !";
         grid.appendChild(msg);
       }
       return;
@@ -168,7 +134,7 @@ function startCountdown(panel, targetDate) {
   update();
 }
 
-/* ====== RSVP — WhatsApp ====== */
+/* ====== RSVP ====== */
 function handleRSVP(n, e) {
   e.preventDefault();
   const name = document.getElementById("rn" + n).value.trim();
@@ -177,23 +143,12 @@ function handleRSVP(n, e) {
   const guests = document.getElementById("rg" + n).value;
   const msg = document.getElementById("rm" + n).value.trim();
 
-  if (!name) {
-    alert("Veuillez entrer votre nom.");
-    return;
-  }
-  if (!presence) {
-    alert("Veuillez indiquer votre présence.");
-    return;
-  }
+  if (!name) { alert("Veuillez entrer votre nom."); return; }
+  if (!presence) { alert("Veuillez indiquer votre présence."); return; }
 
-  const couple =
-    n === 1
-      ? "Ouro Djeri Ben Omar & Ouro Tagba Fatima (29–30 Mai)"
-      : "Abressi Touré Sabour & Sibabi Akpo Hamoudiyatou (30–31 Mai)";
-  const presenceText =
-    presence.value === "oui" ? "✅ Présent(e)" : "❌ Absent(e)";
-  const guestsText =
-    guests === "0" ? "Seul(e)" : "+ " + guests + " personne(s)";
+  const couple = "Ouro Djeri Ben Omar & Ouro Tagba Fatima (29–30 Mai)";
+  const presenceText = presence.value === "oui" ? "✅ Présent(e)" : "❌ Absent(e)";
+  const guestsText = guests === "0" ? "Seul(e)" : "+ " + guests + " personne(s)";
   const whatsappMsg = encodeURIComponent(
     `💍 RSVP — Mariage ${n}\n` +
       `Couple : ${couple}\n` +
@@ -203,23 +158,15 @@ function handleRSVP(n, e) {
       `Accompagnants : ${guestsText}` +
       (msg ? `\nMessage : ${msg}` : ""),
   );
-  // Replace XXXXXXXXX with actual organizer WhatsApp number
   window.open(`https://wa.me/228XXXXXXXXX?text=${whatsappMsg}`, "_blank");
   showSuccess(n);
 }
 
-/* ====== RSVP — sans WhatsApp ====== */
 function submitRSVP(n) {
   const name = document.getElementById("rn" + n).value.trim();
   const presence = document.querySelector('input[name="pr' + n + '"]:checked');
-  if (!name) {
-    alert("Veuillez entrer votre nom.");
-    return;
-  }
-  if (!presence) {
-    alert("Veuillez indiquer votre présence.");
-    return;
-  }
+  if (!name) { alert("Veuillez entrer votre nom."); return; }
+  if (!presence) { alert("Veuillez indiquer votre présence."); return; }
   showSuccess(n);
 }
 
@@ -227,38 +174,95 @@ function showSuccess(n) {
   document.getElementById("rsvp-form-" + n).style.display = "none";
   const s = document.getElementById("rsvp-success-" + n);
   s.classList.remove("hidden");
-  anime({
-    targets: s,
-    opacity: [0, 1],
-    translateY: [16, 0],
-    duration: 700,
-    easing: "easeOutQuart",
-  });
+  anime({ targets: s, opacity: [0, 1], translateY: [16, 0], duration: 700, easing: "easeOutQuart" });
 }
 
 /* ====== LIGHTBOX ====== */
 function openLightbox() {
   document.getElementById("lightbox").classList.add("open");
-  anime({
-    targets: "#lightbox",
-    opacity: [0, 1],
-    duration: 350,
-    easing: "easeOutQuad",
-  });
+  anime({ targets: "#lightbox", opacity: [0, 1], duration: 350, easing: "easeOutQuad" });
 }
 function closeLightbox() {
   anime({
-    targets: "#lightbox",
-    opacity: [1, 0],
-    duration: 280,
-    easing: "easeInQuad",
-    complete: () =>
-      document.getElementById("lightbox").classList.remove("open"),
+    targets: "#lightbox", opacity: [1, 0], duration: 280, easing: "easeInQuad",
+    complete: () => document.getElementById("lightbox").classList.remove("open"),
   });
 }
+
+/* ====== SLIDESHOW ====== */
+(function () {
+  const frames = document.querySelectorAll('.slide-frame');
+  const thumbs = document.querySelectorAll('.thumb');
+  const cur = document.querySelector('.counter-cur');
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    frames[current].classList.remove('active');
+    frames[current].classList.add('exit');
+    thumbs[current].classList.remove('active');
+    setTimeout(() => frames[current === n ? current : current].classList.remove('exit'), 900);
+    current = (n + frames.length) % frames.length;
+    frames[current].classList.add('active');
+    thumbs[current].classList.add('active');
+    if (cur) cur.textContent = current + 1;
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+  function startAuto() { timer = setInterval(next, 4000); }
+  function resetAuto() { clearInterval(timer); startAuto(); }
+
+  document.querySelector('.slide-next')?.addEventListener('click', () => { next(); resetAuto(); });
+  document.querySelector('.slide-prev')?.addEventListener('click', () => { prev(); resetAuto(); });
+  thumbs.forEach((t) => t.addEventListener('click', () => { goTo(parseInt(t.dataset.index)); resetAuto(); }));
+
+  startAuto();
+})();
+
+/* ====== MUSIQUE ====== */
+const music = document.getElementById('bgMusic');
+const btn = document.getElementById('musicToggle');
+let playing = false;
+
+if (btn && music) {
+  btn.addEventListener('click', () => {
+    if (playing) {
+      music.pause();
+      btn.textContent = '♪';
+      btn.classList.remove('playing');
+    } else {
+      music.currentTime = 0;
+      music.play().catch(() => {});
+      btn.textContent = '❚❚';
+      btn.classList.add('playing');
+    }
+    playing = !playing;
+  });
+}
+
+function demarrerMusique() {
+  if (music && !playing) {
+    music.volume = 0.3;
+    music.play().then(() => {
+      playing = true;
+      if (btn) {
+        btn.textContent = '❚❚';
+        btn.classList.add('playing');
+      }
+    }).catch(() => {});
+  }
+  document.removeEventListener('click', demarrerMusique);
+  document.removeEventListener('touchstart', demarrerMusique);
+}
+document.addEventListener('click', demarrerMusique);
+document.addEventListener('touchstart', demarrerMusique);
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
-document.getElementById("lightbox").addEventListener("click", function (e) {
-  if (e.target === this) closeLightbox();
-});
+if (document.getElementById("lightbox")) {
+  document.getElementById("lightbox").addEventListener("click", function (e) {
+    if (e.target === this) closeLightbox();
+  });
+}

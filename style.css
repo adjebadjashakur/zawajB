@@ -169,34 +169,258 @@ body::after {
     margin-left: 5.5px;
 }
 
-/* ======= GALLERY ======= */
-.gallery-item {
-    aspect-ratio: 1;
+/* ═══════════════════════════════════════
+GALERIE — DIAPORAMA CIRCULAIRE
+═══════════════════════════════════════ */
+
+#galerie {
+    background: var(--linen);
+    text-align: center;
+    padding: 80px 24px 100px;
     overflow: hidden;
-    cursor: pointer;
-    position: relative;
 }
 
-.gallery-item::after {
-    content: '🔍';
+/* ======= SLIDESHOW CIRCULAIRE ======= */
+.slideshow-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 0;
+}
+
+.slide-main {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(212, 175, 55, 0.2), 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+.slide-main-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-frame {
     position: absolute;
     inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: scale(0.95);
+}
+
+.slide-frame.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.slide-frame.exit {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.slide-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.15), transparent 50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.slide-counter {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(250, 249, 246, 0.9);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    background: rgba(212, 175, 55, 0.0);
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    z-index: 5;
+    color: var(--gold-dark);
 }
 
-.gallery-item:hover::after {
-    background: rgba(212, 175, 55, 0.15);
+.slide-btn:hover {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
-.gallery-item svg {
+.slide-prev {
+    left: -20px;
+}
+
+.slide-next {
+    right: -20px;
+}
+
+.slide-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.slide-thumbs {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(212, 175, 55, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    background: none;
+}
+
+.thumb:hover {
+    border-color: var(--gold);
+    transform: scale(1.08);
+}
+
+.thumb.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+.thumb img {
     width: 100%;
     height: 100%;
-    display: block;
+    object-fit: cover;
+}
+
+.ring-outer,
+.ring-inner {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    pointer-events: none;
+}
+
+.ring-outer {
+    width: 340px;
+    height: 340px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 30s linear infinite;
+}
+
+.ring-inner {
+    width: 310px;
+    height: 310px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 25s linear infinite reverse;
+}
+
+.petal-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.petal-bg span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(212, 175, 55, 0.06);
+    border-radius: 50%;
+    animation: floatPetals 8s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes floatPetals {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-18px) rotate(180deg);
+        opacity: 0.7;
+    }
+}
+
+/* ======= MUSIC TOGGLE ======= */
+#musicToggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(250, 249, 246, 0.92);
+    backdrop-filter: blur(12px);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: var(--gold-dark);
+    line-height: 1;
+}
+
+#musicToggle:hover {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    transform: scale(1.08);
+}
+
+#musicToggle.playing {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* ======= RSVP INPUTS ======= */
@@ -302,6 +526,50 @@ body::after {
 }
 
 /* ======= RESPONSIVE ======= */
+@media (max-width: 480px) {
+    .slide-main {
+        width: 220px;
+        height: 220px;
+    }
+
+    .slide-prev {
+        left: -10px;
+    }
+
+    .slide-next {
+        right: -10px;
+    }
+
+    .slide-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .slide-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .ring-outer {
+        width: 270px;
+        height: 270px;
+    }
+
+    .ring-inner {
+        width: 245px;
+        height: 245px;
+    }
+
+    .thumb {
+        width: 42px;
+        height: 42px;
+    }
+
+    .slide-thumbs {
+        gap: 8px;
+    }
+}
+
 @media (max-width: 400px) {
     .countdown-num {
         font-size: 1.8rem;
@@ -310,6 +578,21 @@ body::after {
     .countdown-card {
         padding: 14px 10px !important;
         min-width: 58px !important;
+    }
+
+    .slide-main {
+        width: 180px;
+        height: 180px;
+    }
+
+    .ring-outer {
+        width: 220px;
+        height: 220px;
+    }
+
+    .ring-inner {
+        width: 200px;
+        height: 200px;
     }
 }
 
