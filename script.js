@@ -158,7 +158,7 @@ function handleRSVP(n, e) {
       `Accompagnants : ${guestsText}` +
       (msg ? `\nMessage : ${msg}` : ""),
   );
-  window.open(`https://wa.me/22891246051?text=${whatsappMsg}`, "_blank");
+  window.open(`https://wa.me/91246051?text=${whatsappMsg}`, "_blank");
   showSuccess(n);
 }
 
